@@ -1,1 +1,1 @@
-# Ai_Project
+The goal of this project is to develop and evaluate machine learning and deep learning models to predict whether a client will subscribe to a term deposit based on various demographic, financial, and marketing-related features.
