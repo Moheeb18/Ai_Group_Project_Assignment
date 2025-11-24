@@ -1,1 +1,16 @@
 
+===== LOGISTIC REGRESSION RESULTS =====
+Accuracy:  91.61%
+Precision: 71.40%
+Recall:    50.88%
+F1 Score:  59.42%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.94      0.97      0.95    659512
+           1       0.71      0.51      0.59     90488
+
+    accuracy                           0.92    750000
+   macro avg       0.82      0.74      0.77    750000
+weighted avg       0.91      0.92      0.91    750000
