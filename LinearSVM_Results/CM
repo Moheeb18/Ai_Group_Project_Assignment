@@ -1,0 +1,25 @@
+
+=== TRAINING OPTIMIZED LINEAR SVM ===
+iter  1 act 5.615e+05 pre 5.587e+05 delta 8.446e-01 f 7.500e+05 |g| 1.393e+06 CG   3
+iter  2 act 7.298e+03 pre 5.967e+03 delta 8.446e-01 f 1.885e+05 |g| 9.749e+04 CG   6
+iter  3 act 1.341e+03 pre 1.204e+03 delta 8.446e-01 f 1.812e+05 |g| 2.867e+04 CG   7
+iter  4 act 5.598e+01 pre 5.435e+01 delta 8.446e-01 f 1.799e+05 |g| 5.808e+03 CG   7
+iter  5 act 3.298e-01 pre 3.296e-01 delta 8.446e-01 f 1.798e+05 |g| 5.733e+02 CG   7
+iter  6 act 7.592e-04 pre 7.593e-04 delta 8.446e-01 f 1.798e+05 |g| 4.071e+01 CG   6
+[LibLinear]Training completed in: 3.93 seconds (0.07 minutes)
+
+===== LINEAR SVM RESULTS =====
+Accuracy:  91.57%
+Precision: 73.28%
+Recall:    47.47%
+F1 Score:  57.62%
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.93      0.98      0.95    659512
+           1       0.73      0.47      0.58     90488
+
+    accuracy                           0.92    750000
+   macro avg       0.83      0.73      0.76    750000
+weighted avg       0.91      0.92      0.91    750000
