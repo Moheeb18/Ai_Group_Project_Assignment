@@ -63,17 +63,33 @@ x_test = scaler.transform(x_test)
 
 
 #SVM Model
-SVM_model = SVC(kernel='linear')
-SVM_model.fit(x_train, y_train)
-SVM_pred_train = SVM_model.predict(x_train)
-SVM_pred_test = SVM_model.predict(x_test)
+print("\n=== TRAINING OPTIMIZED LINEAR SVM ===")
+start_time = time.time()
 
+# Use LinearSVC - much faster for large datasets
+SVM_model = LinearSVC(
+    random_state=42,
+    max_iter=1000,
+    dual=False,  # Use primal for n_samples > n_features
+    verbose=1,   # Show progress
+    C=1.0        # Regularization parameter
+)
+
+SVM_model.fit(x_train, y_train)
+training_time = time.time() - start_time
+
+print(f"Training completed in: {training_time:.2f} seconds ({training_time/60:.2f} minutes)")
+
+# Predictions
+SVM_pred_train = SVM_model.predict(x_train)
+
+# Metrics
 SVM_accuracy = accuracy_score(y_train, SVM_pred_train)
 SVM_precision = precision_score(y_train, SVM_pred_train)
 SVM_recall = recall_score(y_train, SVM_pred_train)
 SVM_f1 = f1_score(y_train, SVM_pred_train)
 
-print("\n===== SVM RESULTS =====")
+print("\n===== LINEAR SVM RESULTS =====")
 print(f"Accuracy:  {SVM_accuracy*100:.2f}%")
 print(f"Precision: {SVM_precision*100:.2f}%")
 print(f"Recall:    {SVM_recall*100:.2f}%")
@@ -82,8 +98,8 @@ print(f"F1 Score:  {SVM_f1*100:.2f}%")
 print("\nClassification Report:")
 print(classification_report(y_train, SVM_pred_train))
 
-# Confusion Matrix (SVM)
+# Confusion Matrix
 cm_svm = confusion_matrix(y_train, SVM_pred_train)
 sns.heatmap(cm_svm, annot=True, fmt="d", cmap="Greens")
-plt.title("SVM - Confusion Matrix")
+plt.title("Linear SVM - Confusion Matrix")
 plt.show()
